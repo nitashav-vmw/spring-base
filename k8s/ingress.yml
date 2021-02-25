@@ -1,0 +1,21 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:base64", "base64")
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app.kubernetes.io/instance: jenkins-nv
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: jenkins
+    helm.sh/chart: jenkins-7.3.5
+  name: 
+  namespace: 
+spec:
+  rules:
+  - host: .tools.azure.nvcodes.net
+    http:
+      paths:
+      - backend:
+          serviceName: 
+          servicePort: http
+        path: /
