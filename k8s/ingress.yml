@@ -13,6 +13,6 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: 
+          serviceName: #@ data.values.app.name 
           servicePort: http
         path: /
