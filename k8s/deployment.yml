@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: #@ data.values.app.name
-        image: #@ data.values.petclinic.image
+        image: #@ data.values.app.image
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -47,9 +47,9 @@ spec:
               name: wavefront
               key: MANAGEMENT_METRICS_EXPORT_WAVEFRONT_API_TOKEN
         - name: WAVEFRONT_APPLICATION_NAME
-          value: #@ data.values.petclinic.wavefront.applicationName
+          value: #@ data.values.app.wavefront.applicationName
         - name: WAVEFRONT_APPLICATION_SERVICE
-          value: petclinic
+          value: #@ data.values.app.name
         - name: spring_profiles_active
           value: mysql
         - name: MYSQL_URL
