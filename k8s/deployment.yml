@@ -18,6 +18,8 @@ spec:
       labels:
         app: #@ data.values.app.name
     spec:
+      imagePullSecrets:
+      - name: harbor-creds
       containers:
       - name: #@ data.values.app.name
         image: #@ data.values.app.image
