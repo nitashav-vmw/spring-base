@@ -4,15 +4,12 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   labels:
-    app.kubernetes.io/instance: jenkins-nv
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: jenkins
-    helm.sh/chart: jenkins-7.3.5
-  name: 
-  namespace: 
+    app.kubernetes.io/instance: #@ data.values.app.name
+  name: #@ data.values.app.name
+  namespace: #@ data.values.app.ns
 spec:
   rules:
-  - host: .tools.azure.nvcodes.net
+  - host: '#@ data.values.app.name'.tools.azure.nvcodes.net
     http:
       paths:
       - backend:
