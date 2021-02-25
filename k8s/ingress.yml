@@ -9,7 +9,7 @@ metadata:
   namespace: #@ data.values.app.ns
 spec:
   rules:
-  - host: '#@ data.values.app.name'.tools.azure.nvcodes.net
+  - host: #@ data.values.app.host
     http:
       paths:
       - backend:
