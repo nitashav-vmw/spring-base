@@ -56,7 +56,3 @@ spec:
           value: mysql
         - name: MYSQL_URL
           value: "jdbc:mysql://petclinic-db-mysql/petclinic"
-        - name: MYSQL_USER
-          value: root
-        - name: MYSQL_PASS
-          value: LEQVQy8MBw
